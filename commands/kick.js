@@ -10,7 +10,7 @@ module.exports = {
     
     async execute(interaction) {
         const user = interaction.options.getUser('target');
-        const guild = interaction.guild;
+        // const guild = interaction.guild;
         // guild.member(user).kick({reason: 'sdsdasda'});
         return interaction.reply(`${user.username} was kicked due to ${reason}`);
     }
