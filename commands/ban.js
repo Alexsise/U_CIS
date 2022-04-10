@@ -12,9 +12,7 @@ module.exports = {
             const guild = interaction.guild;
             const reason = interaction.options.getString('reason') ?? "Not specified reason";
 
-            guild.bans.create(target, {reason});
+            guild.members.ban(target, {reason});
             return interaction.reply(`${target.username} was banned due to ${reason}`)
-
-
         }
 }
