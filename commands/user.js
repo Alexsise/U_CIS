@@ -6,9 +6,8 @@ module.exports = {
         .setDescription('Replies with the user info!'),
         async execute(interaction) {
             const user = interaction.user;
-            // console.log(interaction);
             return interaction.reply({content:`Your tag: ${user.tag}\n` +
-            `Your id: ${user.id}\n` +
-            `Account created: ${user.createdAt.toLocaleDateString()}`, ephemeral: true});
+                                              `Your id: ${user.id}\n` +
+                                              `Account created: ${user.createdAt.toLocaleDateString()}`, ephemeral: true});
         }
 }
