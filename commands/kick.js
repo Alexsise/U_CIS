@@ -12,7 +12,6 @@ module.exports = {
         const target = interaction.options.getUser('target');
         const guild = interaction.guild;
         const reason = interaction.options.getString('reason') ?? "Not specified reason";
-
         guild.members.kick(target, reason);
         return interaction.reply(`${target.username} was kicked due to ${reason}`);
     }
