@@ -8,8 +8,9 @@ module.exports = {
         .addUserOption(option => option.setName('target').setDescription('Specify user')),
         async execute(interaction) {
             const user = interaction.options.getUser('target');
-            return interaction.reply({content:`User tag: ${user.tag}\n` +
-                                              `User id: ${user.id}` +
-                                              `User creation date: ${user.createdAt.toLocaleDateString()}`})
+            who = user.bot ? 'Bot' : 'User';
+            return interaction.reply({content:`${who} tag: ${user.tag}\n` +
+                                              `${who} id: ${user.id}\n` +
+                                              `${who} creation date: ${user.createdAt.toLocaleDateString()}`})
         }
 }
