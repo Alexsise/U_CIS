@@ -15,6 +15,7 @@ module.exports = {
         `${who} tag: ${user.tag}\n` +
         `${who} id: ${user.id}\n` +
         `${who} creation date: ${user.createdAt.toLocaleDateString()}`,
+      ephemeral: true,
     });
   },
 };

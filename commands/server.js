@@ -5,9 +5,11 @@ module.exports = {
     .setName("server")
     .setDescription("Replies with the server info!"),
   async execute(interaction) {
-    return interaction.reply(
-      `Server: ${interaction.guild.name}\n` +
-        `Total Members: ${interaction.guild.memberCount}`
-    );
+    return interaction.reply({
+      content:
+        `Server: ${interaction.guild.name}\n` +
+        `Total Members: ${interaction.guild.memberCount}`,
+      ephemeral: true,
+    });
   },
 };
