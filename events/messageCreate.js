@@ -1,9 +1,20 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports = {
   name: "messageCreate",
   async execute(client, message) {
     if (message.author.bot) return;
-    await client.channels.cache
-      .get("963791132196761620")
-      .send("Someone decides to say something");
+    const channel = client.channels.cache.get("963791132196761620");
+
+    const embedMessage = new MessageEmbed()
+      .setTitle("New Event!")
+      .setDescription("New Message Event.")
+      .setColor("#0000ff")
+      .addFields(
+        {name: "Author", value: message.author.tag.toString(), inline: true},
+        {name: "Channel", value: message.channel.toString(), inline: true},
+        {name: "Message", value: message.content.toString()}
+      )
+    await channel.send({ embeds: [embedMessage] });
   },
 };
