@@ -2,8 +2,9 @@ const fs = require("node:fs");
 const { Client, Intents, Collection } = require("discord.js");
 const { token } = require("./config.json");
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
-module.exports = { client };
+const client = new Client({
+  intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
+});
 
 client.commands = new Collection();
 const commandFIles = fs
@@ -17,9 +18,9 @@ for (const file of eventFiles) {
   const event = require(`./events/${file}`);
 
   if (event.once) {
-    client.once(event.name, (...args) => event.execute(...args));
+    client.once(event.name, (...args) => event.execute(client, ...args));
   } else {
-    client.on(event.name, (...args) => event.execute(...args));
+    client.on(event.name, (...args) => event.execute(client, ...args));
   }
 }
 
