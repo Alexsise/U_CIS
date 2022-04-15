@@ -7,8 +7,8 @@ module.exports = {
     const channel = client.channels.cache.get("963791132196761620");
 
     const embedMessage = new MessageEmbed()
-      .setTitle("New Event!")
-      .setDescription("New Message Event.")
+      .setTitle("Log")
+      .setDescription("Message was created")
       .setColor("#0000ff")
       .addFields(
         {name: "Author", value: message.author.tag.toString(), inline: true},

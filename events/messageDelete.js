@@ -6,8 +6,8 @@ module.exports = {
     const channel = client.channels.cache.get("963791132196761620");
 
     const embedMessage = new MessageEmbed()
-      .setTitle("New Event!")
-      .setDescription("Deleted Message Event.")
+      .setTitle("Log")
+      .setDescription("The message was deleted.")
       .setColor("#ff0000")
       .addFields(
         {name: "Author", value: message.author.tag.toString(), inline: true},
