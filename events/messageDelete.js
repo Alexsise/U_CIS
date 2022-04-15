@@ -10,10 +10,10 @@ module.exports = {
       .setDescription("The message was deleted.")
       .setColor("#ff0000")
       .addFields(
-        {name: "Author", value: message.author.tag.toString(), inline: true},
-        {name: "Channel", value: message.channel.toString(), inline: true},
-        {name: "Message", value: message.content.toString()}
-      )
+        { name: "Author", value: message.author.tag.toString(), inline: true },
+        { name: "Channel", value: message.channel.toString(), inline: true },
+        { name: "Message", value: message.content.toString() }
+      );
 
     await channel.send({ embeds: [embedMessage] });
   },
