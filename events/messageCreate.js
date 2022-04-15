@@ -9,7 +9,7 @@ module.exports = {
     const embedMessage = new MessageEmbed()
       .setTitle("Log")
       .setDescription("Message was created.")
-      .setColor("#0000ff")
+      .setColor("#000000")
       .addFields(
         { name: "Author", value: message.author.tag.toString(), inline: true },
         { name: "Channel", value: message.channel.toString(), inline: true },
