@@ -11,10 +11,10 @@ module.exports = {
       .setDescription("Message was created.")
       .setColor("#0000ff")
       .addFields(
-        {name: "Author", value: message.author.tag.toString(), inline: true},
-        {name: "Channel", value: message.channel.toString(), inline: true},
-        {name: "Message", value: message.content.toString()}
-      )
+        { name: "Author", value: message.author.tag.toString(), inline: true },
+        { name: "Channel", value: message.channel.toString(), inline: true },
+        { name: "Message", value: message.content.toString() }
+      );
     await channel.send({ embeds: [embedMessage] });
   },
 };
