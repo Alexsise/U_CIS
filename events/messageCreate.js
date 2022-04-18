@@ -4,11 +4,12 @@ module.exports = {
   name: "messageCreate",
   async execute(client, message) {
     if (message.author.bot) return;
+    const date = new Date().toLocaleString();
     const channel = client.channels.cache.get("963791132196761620");
 
     const embedMessage = new MessageEmbed()
-      .setTitle("Log")
-      .setDescription("Message was created.")
+      .setTitle("Message was created.")
+      .setDescription(date)
       .setColor("#000000")
       .addFields(
         { name: "Author", value: message.author.tag.toString(), inline: true },

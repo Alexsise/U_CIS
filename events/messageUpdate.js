@@ -4,11 +4,12 @@ module.exports = {
   name: "messageUpdate",
   async execute(client, oldMessage, newMessage) {
     if (newMessage.content == oldMessage.content) return;
+    const date = new Date().toLocaleString();
     const channel = client.channels.cache.get("963791132196761620");
 
     const embedMessage = new MessageEmbed()
-      .setTitle("Log")
-      .setDescription("The message was deleted.")
+      .setTitle("The message was deleted.")
+      .setDescription(date)
       .setColor("#000000")
       .addFields(
         { name: "Author", value: newMessage.author.tag.toString(), inline: true, },
