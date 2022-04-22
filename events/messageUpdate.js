@@ -4,7 +4,7 @@ module.exports = {
   name: "messageUpdate",
   async execute(client, oldMessage, newMessage) {
     if (newMessage.content == oldMessage.content) return;
-    const date = new Date().toLocaleString();
+    const date = new Date().toString();
     const channel = client.channels.cache.get("963791132196761620");
 
     const embedMessage = new MessageEmbed()

@@ -30,4 +30,3 @@ module.exports = {
     await channel.send({ embeds: [embedMessage] });
   },
 };
-

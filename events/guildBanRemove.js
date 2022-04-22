@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "guildBanRemove",
   async execute(client, ban) {
-    const date = new Date().toLocaleString();
+    const date = new Date().toString();
     const guildBanEntry = await ban.guild.fetchAuditLogs({
       limit: 1,
       type: "MEMBER_BAN_REMOVE",

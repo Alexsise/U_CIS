@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "messageDelete",
   async execute(client, message) {
-    const date = new Date().toLocaleString();
+    const date = new Date().toString();
     const channel = client.channels.cache.get("963791132196761620");
 
     const embedMessage = new MessageEmbed()
