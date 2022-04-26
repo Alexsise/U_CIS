@@ -9,15 +9,13 @@ module.exports = {
       type: "MEMBER_BAN_ADD",
     });
     const banLog = guildBanLog.entries.first();
-
-    if (!banLog)
-      return console.log(
-        `${ban.user.tag} was banned, but Audit Logs didn\`t catch that.`
-      );
-
     const channel = client.channels.cache.get("963791132196761620");
 
     const embedMessage = new MessageEmbed()
+      .setAuthor({
+        name: `${banLog.executor.tag}`,
+        iconURL: `${banLog.executor.avatarURL()}`,
+      })
       .setTitle("User was banned.")
       .setDescription(date)
       .setColor("#000000")

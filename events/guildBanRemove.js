@@ -9,15 +9,13 @@ module.exports = {
       type: "MEMBER_BAN_REMOVE",
     });
     const unbanLog = guildBanEntry.entries.first();
-
-    if (!unbanLog)
-      return console.log(
-        `${ban.user.tag} was unbanned, but Audit Logs didn\`t catch that.`
-      );
-
     const channel = client.channels.cache.get("963791132196761620");
 
     const embedMessage = new MessageEmbed()
+      .setAuthor({
+        name: `${unbanLog.executor.tag}`,
+        iconURL: `${unbanLog.executor.avatarURL()}`,
+      })
       .setTitle("User was unbanned.")
       .setDescription(date)
       .setColor("#000000")
