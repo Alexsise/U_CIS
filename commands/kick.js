@@ -16,6 +16,8 @@ module.exports = {
 
   async execute(interaction) {
     try {
+      if (!interaction.inGuild()) return interaction.reply("This command cannot be used in direct messages.")
+
       const guild = interaction.guild;
       const target = interaction.options.getUser("target");
       const target_guild = await guild.members.fetch(target);

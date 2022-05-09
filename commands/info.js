@@ -17,7 +17,9 @@ module.exports = {
         .setName("server")
         .setDescription("Display current server info.")
     ),
-  async execute(client, interaction) {
+  async execute(interaction) {
+    if (!interaction.inGuild()) return interaction.reply("This command cannot be used in direct messages.")
+
     switch (interaction.options.getSubcommand()) {
       case "user": {
         const user = interaction.options.getUser("target");
