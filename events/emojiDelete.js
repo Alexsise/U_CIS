@@ -10,7 +10,9 @@ module.exports = {
       type: "EMOJI_DELETE",
     });
     const emojiLog = guildLog.entries.first();
-    const channel = client.channels.cache.get("963791132196761620");
+    const logChannel = emoji.guild.channels.cache.find(
+      (channel) => channel.name === "log"
+    );
 
     const embedMessage = new MessageEmbed()
       .setAuthor({
@@ -26,6 +28,6 @@ module.exports = {
       )
       .setImage(emoji.url);
 
-    await channel.send({ embeds: [embedMessage] });
+    await logChannel.send({ embeds: [embedMessage] });
   },
 };

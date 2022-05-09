@@ -10,7 +10,7 @@ module.exports = {
       type: "CHANNEL_CREATE",
     });
     const channelLog = guildLog.entries.first();
-    const logChannel = client.channels.cache.get("963791132196761620");
+    const logChannel = channel.guild.channels.cache.find(ch => ch.name === "log");
 
     const embedMessage = new MessageEmbed()
       .setAuthor({

@@ -4,7 +4,9 @@ module.exports = {
   name: "guildMemberAdd",
   async execute(client, member) {
     const date = new Date().toString();
-    const channel = client.channels.cache.get("963791132196761620");
+    const logChannel = member.guild.channels.cache.find(
+      (channel) => channel.name === "log"
+    );
     who = member.bot ? "Bot" : "User";
 
     const embedMessage = new MessageEmbed()
@@ -24,6 +26,6 @@ module.exports = {
         }
       );
 
-    await channel.send({ embeds: [embedMessage] });
+    await logChannel.send({ embeds: [embedMessage] });
   },
 };

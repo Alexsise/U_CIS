@@ -9,7 +9,9 @@ module.exports = {
       type: "MESSAGE_DELETE",
     });
     const messageLog = guildLog.entries.first();
-    const channel = client.channels.cache.get("963791132196761620");
+    const logChannel = message.guild.channels.cache.find(
+      (channel) => channel.name === "log"
+    );
     msg =
       message.content.toString() == "" ? "No text" : message.content.toString();
 
@@ -42,6 +44,6 @@ module.exports = {
         }
       );
 
-    await channel.send({ embeds: [embedMessage] });
+    await logChannel.send({ embeds: [embedMessage] });
   },
 };

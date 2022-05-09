@@ -9,7 +9,9 @@ module.exports = {
       type: "CHANNEL_DELETE",
     });
     const channelLog = guildLog.entries.first();
-    const logChannel = client.channels.cache.get("963791132196761620");
+    const logChannel = emoji.guild.channels.cache.find(
+      (channel) => channel.name === "log"
+    );
 
     const embedMessage = new MessageEmbed()
       .setAuthor({

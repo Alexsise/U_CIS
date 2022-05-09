@@ -5,7 +5,9 @@ module.exports = {
   async execute(client, message) {
     if (message.author.bot) return;
     const date = new Date().toString();
-    const channel = client.channels.cache.get("963791132196761620");
+    const logChannel = message.guild.channels.cache.find(
+      (channel) => channel.name === "log"
+    );
     const author = message.author;
     msg =
       message.content.toString() == "" ? "No text" : message.content.toString();
@@ -29,6 +31,6 @@ module.exports = {
           value: message.attachments.size.toString(),
         }
       );
-    await channel.send({ embeds: [embedMessage] });
+    await logChannel.send({ embeds: [embedMessage] });
   },
 };

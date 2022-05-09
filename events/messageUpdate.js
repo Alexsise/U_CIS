@@ -6,11 +6,19 @@ module.exports = {
     if (newMessage.content == oldMessage.content) return;
 
     const date = new Date().toString();
-    const channel = client.channels.cache.get("963791132196761620");
+    const logChannel = oldMessage.guild.channels.cache.find(
+      (channel) => channel.name === "log"
+    );
     const author = oldMessage.author;
 
-    oldMsg = oldMessage.content.toString() == "" ? "No text": message.content.toString();
-    newMsg = newMessage.content.toString() == "" ? "No text": message.content.toString();
+    oldMsg =
+      oldMessage.content.toString() == ""
+        ? "No text"
+        : oldMessage.content.toString();
+    newMsg =
+      newMessage.content.toString() == ""
+        ? "No text"
+        : newMessage.content.toString();
 
     const embedMessage = new MessageEmbed()
       .setAuthor({
@@ -37,6 +45,6 @@ module.exports = {
         }
       );
 
-    await channel.send({ embeds: [embedMessage] });
+    await logChannel.send({ embeds: [embedMessage] });
   },
 };

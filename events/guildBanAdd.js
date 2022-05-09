@@ -9,7 +9,9 @@ module.exports = {
       type: "MEMBER_BAN_ADD",
     });
     const banLog = guildBanLog.entries.first();
-    const channel = client.channels.cache.get("963791132196761620");
+    const logChannel = ban.guild.channels.cache.find(
+      (channel) => channel.name === "log"
+    );
 
     const embedMessage = new MessageEmbed()
       .setAuthor({
@@ -25,6 +27,6 @@ module.exports = {
         { name: "Reason", value: banLog.reason ?? "Not specified" }
       );
 
-    await channel.send({ embeds: [embedMessage] });
+    await logChannel.send({ embeds: [embedMessage] });
   },
 };

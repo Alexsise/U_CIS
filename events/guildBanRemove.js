@@ -9,7 +9,9 @@ module.exports = {
       type: "MEMBER_BAN_REMOVE",
     });
     const unbanLog = guildBanEntry.entries.first();
-    const channel = client.channels.cache.get("963791132196761620");
+    const logChannel = ban.guild.channels.cache.find(
+      (channel) => channel.name === "log"
+    );
 
     const embedMessage = new MessageEmbed()
       .setAuthor({
@@ -24,6 +26,6 @@ module.exports = {
         { name: "Executor", value: unbanLog.executor.tag, inline: true }
       );
 
-    await channel.send({ embeds: [embedMessage] });
+    await logChannel.send({ embeds: [embedMessage] });
   },
 };
