@@ -3,6 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "messageUpdate",
   async execute(client, oldMessage, newMessage) {
+    if (oldMessage.system) return;
     if (newMessage.content == oldMessage.content) return;
 
     const date = new Date().toString();

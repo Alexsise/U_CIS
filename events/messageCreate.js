@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "messageCreate",
   async execute(client, message) {
-    if (message.author.bot) return;
+    if (message.author.bot || message.system) return;
     const date = new Date().toString();
     const logChannel = message.guild.channels.cache.find(
       (channel) => channel.name === "log"
@@ -31,6 +31,9 @@ module.exports = {
           value: message.attachments.size.toString(),
         }
       );
+
+    // console.log(message.attachments.size);
+
     await logChannel.send({ embeds: [embedMessage] });
   },
 };
