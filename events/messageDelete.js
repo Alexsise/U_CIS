@@ -3,6 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "messageDelete",
   async execute(client, message) {
+    if (message.author.bot) return;
     const date = new Date().toString();
     const guildLog = await message.guild.fetchAuditLogs({
       limit: 1,
