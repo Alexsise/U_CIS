@@ -37,7 +37,7 @@ module.exports = {
         },
         { name: "Channel", value: newMessage.channel.toString(), inline: true },
         {
-          name: "Old message",
+          name: "Old Message",
           value: oldMsg,
         },
         {
