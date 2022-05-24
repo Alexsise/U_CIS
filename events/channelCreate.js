@@ -10,7 +10,9 @@ module.exports = {
       type: "CHANNEL_CREATE",
     });
     const channelLog = guildLog.entries.first();
-    const logChannel = channel.guild.channels.cache.find(ch => ch.name === "log");
+    const logChannel = channel.guild.channels.cache.find(
+      (ch) => ch.name === "log"
+    );
 
     const embedMessage = new MessageEmbed()
       .setAuthor({
@@ -21,7 +23,7 @@ module.exports = {
       .setDescription(date)
       .setColor("#000000")
       .addFields(
-        { name: "Channel", value: channelLog.target.name, inline: true },
+        { name: "Channel", value: channel, inline: true },
         { name: "Created by", value: channelLog.executor.tag, inline: true }
       );
 
