@@ -18,8 +18,8 @@ module.exports = {
 
     const embedMessage = new MessageEmbed()
       .setAuthor({
-        name: `${messageLog.executor.tag}`,
-        iconURL: `${messageLog.executor.avatarURL()}`,
+        name: `${message.author.tag}`,
+        iconURL: `${message.author.avatarURL()}`,
       })
       .setTitle("The message was deleted.")
       .setDescription(date)
@@ -30,20 +30,14 @@ module.exports = {
           value: message.author.tag,
           inline: true,
         },
-        {
-          name: "Deleted by",
-          value: messageLog.executor.tag,
-          inline: true,
-        },
-        { name: "Channel", value: message.channel.toString(), inline: true }
-      )
-      .addFields(
-        { name: "Message", value: msg },
+        { name: "Channel", value: message.channel.toString(), inline: true },
         {
           name: "Number of attachments",
           value: message.attachments.size.toString(),
+          inline: true,
         }
-      );
+      )
+      .addField("Message", msg );
 
     await logChannel.send({ embeds: [embedMessage] });
   },
