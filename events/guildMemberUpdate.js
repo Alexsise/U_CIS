@@ -3,6 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "guildMemberUpdate",
   async execute(client, oldMember, newMember) {
+    const date = new Date().toString();
     const logChannel = oldMember.guild.channels.cache.find(
       (channel) => channel.name === "log"
     );
