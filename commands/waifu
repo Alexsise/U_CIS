@@ -1,0 +1,22 @@
+const { SlashCommandBuilder } = require("@discordjs/builders");
+const axios = reuire("axios");
+
+module.exports = {
+  date: new SlashCommandBuilder()
+    .setName("waifu")
+    .setDescription("Get a anime gif or picture")
+    .addSubcommand((subcommand) =>
+      subcommand
+        .setName(sfw)
+        .setDescription("Choose from safe for work tags")
+    )
+    .addSubcommand((subcommand) =>
+      subcommand
+        .setName("nsfw")
+        .setDescription("Choose from not safe for work tags")
+    ),
+    async execute(interaction) {
+        const channel = interaction.channel;
+        channel.send(`${interaction.options.getSubcommand() === "sfw" ? "sfw": "nsfw"}`)
+    }
+};
