@@ -67,6 +67,6 @@ module.exports = {
 
     const ephemeral = interaction.options.getSubcommand() === "nsfw" ? true : false;
 
-    interaction.reply({ content: ful.data.url, ephemeral: false });
+    interaction.reply({ content: ful.data.url, ephemeral: ephemeral });
   },
 };
