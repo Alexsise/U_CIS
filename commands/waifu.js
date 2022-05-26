@@ -57,15 +57,13 @@ module.exports = {
         )
     ),
   async execute(interaction) {
-    const type = interaction.options.getSubcommand().toString()
-    const category = interaction.options.getString("category")
-    const url = `https://api.waifu.pics/${type}/${category}`
+    const type = interaction.options.getSubcommand().toString();
+    const category = interaction.options.getString("category");
+    const url = `https://api.waifu.pics/${type}/${category}`;
 
-    const ful = await axios.get(
-      url
-    );
+    const ful = await axios.get(url);
 
-    const ephemeral = interaction.options.getSubcommand() === "nsfw" ? true : false;
+    const ephemeral = type === "nsfw" ? true : false;
 
     interaction.reply({ content: ful.data.url, ephemeral: ephemeral });
   },
