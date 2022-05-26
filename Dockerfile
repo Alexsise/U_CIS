@@ -1,6 +1,6 @@
 FROM node:12.13-alpine
 
-WORKDIR /U
+WORKDIR /u_cis
 
 COPY package*.json ./
 
