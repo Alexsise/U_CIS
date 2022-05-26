@@ -36,6 +36,7 @@ module.exports = {
         return interaction.reply({
           content:
             `Server: ${interaction.guild.name}\n` +
+            `Server id: ${interaction.guild.id}\n` +
             `Total Members: ${interaction.guild.memberCount}`,
           ephemeral: true,
         });

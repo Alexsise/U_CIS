@@ -22,7 +22,7 @@ const rest = new REST({ version: "9" }).setToken(process.env.TOKEN);
 
 rest
   .put(
-    Routes.applicationGuildCommands(process.env.CLIENTID, process.env.GUILDID),
+    Routes.applicationCommands(process.env.CLIENTID),
     { body: commands }
   )
   .then(() => console.log("Succesfully registered application commands"))
