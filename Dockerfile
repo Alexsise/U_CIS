@@ -1,4 +1,4 @@
-FROM node:12.13-alpine
+FROM node:18-alpine3.14
 
 WORKDIR /u_cis
 
