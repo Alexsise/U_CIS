@@ -1,0 +1,14 @@
+version: "2"
+services:
+  main:
+    container_name: u_cis
+    build: 
+      context: .
+    env_file:  
+      - .env
+    volumes:
+      - .:/u_cis
+      - /u_cis/node_modules
+    command: npm run full_start
+    restart: unless-stopped
+    stop_signal: SIGINT
