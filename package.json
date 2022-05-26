@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "full_start": "node .\\src\\deploy-commands.js && node .\\src\\index.js",
-    "start_no_deploy": "node .\\index.js",
+    "full_start": "node ./src/deploy-commands.js && node ./src/index.js",
+    "start_no_deploy": "node ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
