@@ -13,6 +13,8 @@ module.exports = {
       (channel) => channel.name === "log"
     );
 
+
+    
     const embedMessage = new MessageEmbed()
       .setAuthor({
         name: `${channelLog.executor.tag}`,
