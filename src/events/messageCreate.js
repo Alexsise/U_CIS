@@ -32,8 +32,6 @@ module.exports = {
         }
       );
 
-    // console.log(message.attachments.size);
-
     await logChannel.send({ embeds: [embedMessage] });
   },
 };
