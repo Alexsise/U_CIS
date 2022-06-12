@@ -65,6 +65,6 @@ module.exports = {
 
     const ephemeral = type === "nsfw" ? true : false;
 
-    interaction.reply({ content: ful.data.url, ephemeral: ephemeral });
+    await interaction.reply({ content: ful.data.url, ephemeral: ephemeral });
   },
 };

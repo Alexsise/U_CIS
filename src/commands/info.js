@@ -18,13 +18,13 @@ module.exports = {
         .setDescription("Display current server info.")
     ),
   async execute(interaction) {
-    if (!interaction.inGuild()) return interaction.reply("This command cannot be used in direct messages.")
+    if (!interaction.inGuild()) await interaction.reply("This command cannot be used in direct messages.")
 
     switch (interaction.options.getSubcommand()) {
       case "user": {
         const user = interaction.options.getUser("target");
         who = user.bot ? "Bot" : "User";
-        return interaction.reply({
+        await interaction.reply({
           content:
             `${who} tag: ${user.tag}\n` +
             `${who} id: ${user.id}\n` +
@@ -33,7 +33,7 @@ module.exports = {
         });
       }
       case "server":
-        return interaction.reply({
+        await interaction.reply({
           content:
             `Server: ${interaction.guild.name}\n` +
             `Server id: ${interaction.guild.id}\n` +

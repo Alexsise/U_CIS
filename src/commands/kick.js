@@ -43,7 +43,7 @@ module.exports = {
       );
     } catch (error) {
       console.log(error);
-      return interaction.reply({ content: "Kick issue.", ephemeral: true });
+      await interaction.reply({ content: "Kick issue.", ephemeral: true });
     }
   },
 };

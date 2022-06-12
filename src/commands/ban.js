@@ -19,7 +19,10 @@ module.exports = {
 
   async execute(interaction) {
     try {
-      if (!interaction.inGuild()) return interaction.reply("This command cannot be used in direct messages.")
+      if (!interaction.inGuild())
+        return interaction.reply(
+          "This command cannot be used in direct messages."
+        );
       const guild = interaction.guild;
       const target = interaction.options.getUser("target");
       const target_guild = await guild.members.fetch(target);
@@ -28,24 +31,24 @@ module.exports = {
         interaction.options.getString("reason") ?? "not specified reason";
 
       if (!user.permissions.has("BAN_MEMBERS", true))
-        return interaction.reply({
+        await interaction.reply({
           content: "You don't have permissions to ban members.",
           ephemeral: true,
         });
 
       if (!target_guild.bannable)
-        return interaction.reply({
+        await interaction.reply({
           content: "This target cannot be banned.",
           ephemeral: true,
         });
 
       guild.members.ban(target_guild, { reason });
-      return interaction.reply(
+      await interaction.reply(
         `${target.username} was banned due to ${reason}.`
       );
     } catch (error) {
       console.log(error);
-      return interaction.reply("Ban issue.");
+      await interaction.reply("Ban issue.");
     }
   },
 };
