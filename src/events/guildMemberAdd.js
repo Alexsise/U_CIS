@@ -3,7 +3,6 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "guildMemberAdd",
   async execute(client, member) {
-    console.log("Beep");
     const date = new Date().toString();
     const logChannel = member.guild.channels.cache.find(
       (channel) => channel.name === "log"
