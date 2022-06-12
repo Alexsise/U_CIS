@@ -6,10 +6,10 @@
   "scripts": {
     "deployStart": "run-script-os",
       "deployStart:win32": "node .\\src\\deploy-commands.js && node .\\src\\index.js",
-      "deployStart:linux": "node ./src/deploy-commands.js && node ./src/index.js",
+      "deployStart:nix": "node ./src/deploy-commands.js && node ./src/index.js",
     "start": "run-script-os",
       "start:win32": "node .\\src\\index.js",
-      "start:linux": "node ./src/index.js",
+      "start:nix": "node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
