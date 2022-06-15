@@ -14,31 +14,33 @@ module.exports = {
             .setName("category")
             .setDescription("Choose category")
             .setRequired(true)
-            .addChoice("waifu", "waifu")
-            .addChoice("neko", "neko")
-            .addChoice("shinobu", "shinobu")
-            .addChoice("megumin", "megumin")
-            .addChoice("bully", "bully")
-            .addChoice("cuddle", "cuddle")
-            .addChoice("cry", "cry")
-            .addChoice("hug", "hug")
-            .addChoice("awoo", "awoo")
-            .addChoice("kiss", "kiss")
-            .addChoice("lick", "lick")
-            .addChoice("pat", "pat")
-            .addChoice("smug", "smug")
-            .addChoice("bonk", "bonk")
-            .addChoice("yeet", "yeet")
-            .addChoice("blush", "blush")
-            .addChoice("smile", "smile")
-            .addChoice("wave", "wave")
-            .addChoice("highfive", "highfive")
-            .addChoice("handhold", "handhold")
-            .addChoice("nom", "nom")
-            .addChoice("bite", "bite")
-            .addChoice("glomp", "glomp")
-            .addChoice("slap", "slap")
-            .addChoice("kill", "kill")
+            .addChoices(
+              { name: "waifu", value: "waifu" },
+              { name: "neko", value: "neko" },
+              { name: "shinobu", value: "shinobu" },
+              { name: "megumin", value: "megumin" },
+              { name: "bully", value: "bully" },
+              { name: "cuddle", value: "cuddle" },
+              { name: "cry", value: "cry" },
+              { name: "hug", value: "hug" },
+              { name: "awoo", value: "awoo" },
+              { name: "kiss", value: "kiss" },
+              { name: "lick", value: "lick" },
+              { name: "pat", value: "pat" },
+              { name: "smug", value: "smug" },
+              { name: "bonk", value: "bonk" },
+              { name: "yeet", value: "yeet" },
+              { name: "blush", value: "blush" },
+              { name: "smile", value: "smile" },
+              { name: "wave", value: "wave" },
+              { name: "highfive", value: "highfive" },
+              { name: "handhold", value: "handhold" },
+              { name: "nom", value: "nom" },
+              { name: "bite", value: "bite" },
+              { name: "glomp", value: "glomp" },
+              { name: "slap", value: "slap" },
+              { name: "kill", value: "kill" }
+            )
         )
     )
     .addSubcommand((subcommand) =>
@@ -50,10 +52,12 @@ module.exports = {
             .setName("category")
             .setDescription("Choose category")
             .setRequired(true)
-            .addChoice("waifu", "waifu")
-            .addChoice("neko", "neko")
-            .addChoice("bj", "blowjob")
-            .addChoice("trap", "trap")
+            .addChoices(
+              { name: "waifu", value: "waifu" },
+              { name: "neko", value: "neko" },
+              { name: "bj", value: "blowjob" },
+              { name: "trap", value: "trap" }
+            )
         )
     ),
   async execute(interaction) {
