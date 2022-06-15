@@ -1,12 +1,21 @@
 const { MessageEmbed } = require("discord.js");
+const fs = require("fs");
+const path = require("node:path");
 
 module.exports = {
   name: "guildMemberAdd",
   async execute(client, member) {
     const date = new Date().toString();
+
+    const configFilePath = path.resolve(__dirname, "../../config.json");
+    const configFile = fs.readFileSync(configFilePath);
+    let config = JSON.parse(configFile);
+    config = config.Channels;
+
     const logChannel = member.guild.channels.cache.find(
-      (channel) => channel.name === "log"
+      (channel) => channel.id === config["guildMemberAdd"]
     );
+
     who = member.bot ? "Bot" : "User";
 
     const embedMessage = new MessageEmbed()
