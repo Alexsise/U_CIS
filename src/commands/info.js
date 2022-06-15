@@ -17,6 +17,7 @@ module.exports = {
         .setName("server")
         .setDescription("Display current server info.")
     ),
+
   async execute(interaction) {
     if (!interaction.inGuild()) await interaction.reply("This command cannot be used in direct messages.")
 
@@ -31,6 +32,7 @@ module.exports = {
             `${who} creation date: ${user.createdAt.toLocaleString()}`,
           ephemeral: true,
         });
+        break;
       }
       case "server":
         await interaction.reply({
@@ -40,6 +42,7 @@ module.exports = {
             `Total Members: ${interaction.guild.memberCount}`,
           ephemeral: true,
         });
+        break;
     }
   },
 };
