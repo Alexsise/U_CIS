@@ -6,14 +6,13 @@ module.exports = {
     const command = client.commands.get(interaction.commandName);
 
     if (!command) return;
-    try {
-      await command.execute(interaction);
-    } catch (error) {
+
+    await command.execute(interaction).catch((error) => {
       console.error(error);
-      await interaction.followUp({
+      interaction.reply({
         content: "There was an unexpected error while executing the command",
         ephemeral: true,
       });
-    }
+    });
   },
 };
