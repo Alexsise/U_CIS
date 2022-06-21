@@ -15,7 +15,7 @@ module.exports = {
     .addSubcommand((subcommand) =>
       subcommand
         .setName("server")
-        .setDescription("Display current server info.")
+        .setDescription("Displays server`s info")
     ),
 
   async execute(interaction) {
