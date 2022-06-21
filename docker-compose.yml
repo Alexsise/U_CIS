@@ -9,6 +9,6 @@ services:
     volumes:
       - .:/u_cis
       - /u_cis/node_modules
-    command: npm run full_start
+    command: npm run deployStart
     restart: unless-stopped
     stop_signal: SIGINT
