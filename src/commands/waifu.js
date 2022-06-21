@@ -8,7 +8,7 @@ module.exports = {
     .addSubcommand((subcommand) =>
       subcommand
         .setName("sfw")
-        .setDescription("Choose from safe for work tags")
+        .setDescription("Choose from SFW tags")
         .addStringOption((option) =>
           option
             .setName("category")
@@ -46,7 +46,7 @@ module.exports = {
     .addSubcommand((subcommand) =>
       subcommand
         .setName("nsfw")
-        .setDescription("Choose from not safe for work tags")
+        .setDescription("Choose from NSFW tags")
         .addStringOption((option) =>
           option
             .setName("category")
