@@ -5,7 +5,7 @@ module.exports = {
 
     const command = client.commands.get(interaction.commandName);
 
-    if (!command) return;
+    if (!command) console.log("Button");
 
     await command.execute(interaction).catch((error) => {
       console.error(error);

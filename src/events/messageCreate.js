@@ -41,6 +41,13 @@ module.exports = {
       )
       .addField("Message", msg);
 
+
+        if (message.content.ToLower().find("привет")) {
+          message.reply("Приветы для")
+        }
+
+
+
     await logChannel.send({ embeds: [embedMessage] });
   },
 };

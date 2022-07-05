@@ -5,7 +5,12 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-const client = new Client({ intents: 591 });
+const client = new Client({
+  intents: 591,
+  presence: {
+    status: "online",
+  },
+});
 
 //#region Command handling
 client.commands = new Collection();

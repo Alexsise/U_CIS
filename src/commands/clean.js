@@ -12,7 +12,12 @@ module.exports = {
         .setRequired(true)
     ),
   async execute(interaction) {
-    const amount = await interaction.options.get("amount");
+    let amount = await interaction.options.get("amount").value;
+    if (amount < 1)
+      return interaction.reply(
+        "You enter value **greater than** or **equal** to **1**"
+      );
+
     const channel = interaction.channel;
 
     const yesButton = new MessageButton()
@@ -29,14 +34,15 @@ module.exports = {
 
     interaction.reply({
       content:
-        `Are you sure you want to clean **${amount.value}** messages in this channel?\n` +
+        `Are you sure you want to clean **${amount}** messages in this channel?\n` +
         `**(This action cannot be undone)**`,
       components: [actionRow],
     });
 
-
     const messages = await channel.messages.fetch();
-    const botMsg = messages.filter((msg) => msg.author.id === "938519031302983680")
+    const botMsg = messages.filter(
+      (msg) => msg.author.id === "938519031302983680"
+    );
 
     const filter = (click) =>
       (click.user.id =
@@ -50,12 +56,20 @@ module.exports = {
       max: 1,
     });
 
-    collector.on("collect", (interaction) => {
+    collector.on("collect", async (interaction) => {
       if (interaction.customId === "yesBulkDelete") {
-        channel.bulkDelete(amount.value, true);
+        while (amount > 0) {
+          if (amount > 100) {
+            channel.bulkDelete(100, true);
+            amount -= 100;
+          } else {
+            channel.bulkDelete(amount, true);
+          }
+        }
+        await filter.update({content: "done!", components: []})
       }
       if (interaction.customId === "noBulkDelete") {
-        channel.bulkDelete(1, true)
+        channel.bulkDelete(1, true);
       }
     });
   },

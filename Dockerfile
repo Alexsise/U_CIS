@@ -1,11 +1,11 @@
-FROM node:18-alpine3.14
+FROM node:18-alpine3.15
 
 WORKDIR /u_cis
 
 COPY package*.json ./
 
-RUN npm install -f
+RUN npm install
 
 COPY . .
 
-CMD ["npm", "run", "full_start"]
+CMD ["npm", "run", "start"]

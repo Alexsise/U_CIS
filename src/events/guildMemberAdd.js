@@ -12,7 +12,7 @@ module.exports = {
     let config = JSON.parse(configFile);
     config = config.Channels;
 
-    const logChannel = member.guild.channels.cache.find(
+    const logChannel = await member.guild.channels.cache.find(
       (channel) => channel.id === config["guildMemberAdd"]
     );
 

@@ -25,5 +25,5 @@ rest
     Routes.applicationGuildCommands(process.env.CLIENTID, process.env.GUILDID),
     { body: commands }
   )
-  .then(() => console.log("Succesfully registered application commands"))
+  .then(() => console.log("Successfully registered application commands"))
   .catch(console.error);
