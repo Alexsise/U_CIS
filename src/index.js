@@ -2,8 +2,10 @@ const fs = require("node:fs");
 const path = require("node:path");
 const { Client, Collection } = require("discord.js");
 const dotenv = require("dotenv");
+const MongoClient = require("mongodb").MongoClient;
 
 dotenv.config();
+
 
 const client = new Client({
   intents: 591,

@@ -35,6 +35,6 @@ module.exports = {
         }
       );
 
-    await logChannel.send({ embeds: [embedMessage] });
+    return logChannel.send({ embeds: [embedMessage] });
   },
 };

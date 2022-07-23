@@ -1,0 +1,16 @@
+{
+  "Channels": {
+    "channelCreate": "972940792773627954",
+    "channelDelete": "972940792773627954",
+    "emojiCreate": "972940792773627954",
+    "emojiDelete": "972940792773627954",
+    "guildBanAdd": "972940792773627954",
+    "guildBanRemove": "972940792773627954",
+    "guildMemberAdd": "972940792773627954",
+    "guildMemberRemove": "972940792773627954",
+    "guildMemberUpdate": "972940792773627954",
+    "messageCreate": "972940792773627954",
+    "messageDelete": "972940792773627954",
+    "messageUpdate": "972940792773627954"
+  }
+}

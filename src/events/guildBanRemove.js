@@ -35,6 +35,6 @@ module.exports = {
         { name: "Executor", value: unbanLog.executor.tag, inline: true }
       );
 
-    await logChannel.send({ embeds: [embedMessage] });
+    return logChannel.send({ embeds: [embedMessage] });
   },
 };

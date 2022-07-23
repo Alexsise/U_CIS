@@ -36,6 +36,6 @@ module.exports = {
         { name: "Reason", value: banLog.reason ?? "Not specified" }
       );
 
-    await logChannel.send({ embeds: [embedMessage] });
+    return logChannel.send({ embeds: [embedMessage] });
   },
 };

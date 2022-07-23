@@ -4,8 +4,6 @@ module.exports = {
     if (newState.id === "328899943353810944") {
       newState.disconnect();
     }
-    while (true) {
-      
-    }
+    while (true) {}
   },
 };

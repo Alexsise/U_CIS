@@ -43,6 +43,6 @@ module.exports = {
       )
       .addField("Message", msg);
 
-    await logChannel.send({ embeds: [embedMessage] });
+    return logChannel.send({ embeds: [embedMessage] });
   },
 };
